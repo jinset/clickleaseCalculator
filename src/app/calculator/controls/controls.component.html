@@ -1,0 +1,60 @@
+<section class="controls">
+  <div class="controls-content">
+    <div class="controls-view">
+      <span>Avg. monthly apps</span>
+      <span>{{ calculator.avgMonthly }}</span>
+    </div>
+    <div class="controls-range">
+      <range
+        maxValue="500"
+        [rangeValue]="calculator.avgMonthly"
+        dataType="avgMonthly"
+      ></range>
+    </div>
+  </div>
+
+  <div class="controls-content">
+    <div class="controls-view">
+      <span>Average invoice amount</span>
+      <span>{{ calculator.avgInvoice }}</span>
+    </div>
+    <div class="controls-range">
+      <range
+        maxValue="15000"
+        [rangeValue]="calculator.avgInvoice"
+        dataType="avgInvoice"
+      ></range>
+    </div>
+
+  </div>
+
+  <div class="controls-content">
+    <div class="controls-view">
+      <span>Current approval rate</span>
+      <span>{{ calculator.currentApproval }}%</span>
+    </div>
+    <div class="controls-range">
+      <range
+        stepValue="10"
+        [rangeValue]="calculator.currentApproval"
+        dataType="currentApproval"
+      ></range>
+    </div>
+  </div>
+
+  <div class="controls-content">
+    <div class="controls-view">
+      <span>Current close rate</span>
+      <span>{{ calculator.currentClose }}%</span>
+    </div>
+
+    <div class="controls-range">
+      <range
+        stepValue="10"
+        [rangeValue]="calculator.currentClose"
+        dataType="currentClose"
+      ></range>
+    </div>
+  </div>
+
+</section>

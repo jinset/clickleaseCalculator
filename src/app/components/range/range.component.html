@@ -1,0 +1,14 @@
+<div class="range">
+  <button class="range-btn" (click)="decrease()"><</button>
+  <input
+    type="range"
+    #ranger
+    [min]="minValue"
+    [max]="maxValue"
+    [value]="rangeValue"
+    class="slider"
+    [step]="stepValue"
+    (input)="setValue(ranger.value)"
+  />
+  <button class="range-btn" (click)="increase()">></button>
+</div>

@@ -1,0 +1,40 @@
+
+.chart-info {
+  margin: 10px;
+}
+
+.chart-info-data {
+  width: 100%;
+}
+
+.chart-info-title {
+  text-align: center;
+}
+
+
+.chart-info-data-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+
+@media (min-width: 768px) {
+  .chart-info-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+
+  .chart-info-data-text {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .apexcharts-text .apexcharts-pie-label {
+    fill: red;
+  }
+
+}

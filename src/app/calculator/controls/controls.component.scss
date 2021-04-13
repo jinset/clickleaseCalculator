@@ -1,0 +1,29 @@
+.controls {
+  padding: 10px 0;
+}
+
+.controls-content {
+  margin: 10px;
+}
+
+.controls-view {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .controls-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .controls-view {
+    padding: 15px 0;
+    width: 30%;
+  }
+
+  .controls-range {
+    margin: 0 20px;
+    width: 70%;
+  }
+}

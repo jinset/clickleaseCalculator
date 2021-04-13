@@ -1,0 +1,38 @@
+<section class="controls">
+
+  <div class="controls-content">
+    <div class="controls-view">
+      <span>Click Approval rate</span>
+      <span>{{ calculator.clickApproval }}%</span>
+    </div>
+    <div class="controls-range">
+      <range
+      stepValue="10"
+      [rangeValue]="calculator.clickApproval"
+      dataType="clickApproval"
+    ></range>
+    </div>
+  </div>
+
+  <div class="controls-content">
+    <div class="controls-view">
+      <span>Click close rate</span>
+      <span>{{ calculator.clickClose }}</span>
+    </div>
+    <div class="controls-range">
+      <range
+      stepValue="10"
+      [rangeValue]="calculator.clickClose"
+      dataType="clickClose"
+    ></range>
+    </div>
+  </div>
+
+  <div class="controls-content">
+    <div class="controls-view-loss">
+      <span>Total loss by not using Click</span>
+      <span>${{ calculator.totalLoss | number: '1.0-0'  }}</span>
+    </div>
+  </div>
+</section>
+

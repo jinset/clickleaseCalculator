@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.total-annual {
+  display: grid;
+  text-align: center;
+}
+
+.total-annual-subtext {
+  font-size: 34px;
+}
+
+.total-annual-total {
+  color: $blue;
+  font-size: 68px;
+  font-weight: bold;
+  margin: 10px 0;
+}

@@ -1,0 +1,70 @@
+<section class="chart-info">
+  <div class="chart-info-title">
+    <h2 class="" *ngIf="!clickLease">Current</h2>
+    <img src="../../../assets/clicklease-logo.png" alt="" *ngIf="clickLease" />
+  </div>
+
+  <div class="chart-info-content">
+    <div class="chart-info-data">
+      <div class="chart-info-data-text">
+        <span>Average monthly apps</span>
+        <span>{{ calculator.avgMonthly }}</span>
+      </div>
+      <div class="chart-info-data-text">
+        <span>Customers approved</span>
+        <span>
+          {{
+            (clickLease
+              ? calculator.avgMonthly * (calculator.clickApproval / 100)
+              : calculator.avgMonthly * (calculator.currentApproval / 100)
+            ) | number: "1.0-0"
+          }}
+        </span>
+      </div>
+      <div class="chart-info-data-text">
+        <span>Customers funded</span>
+        <span>
+          {{
+            (clickLease
+              ? calculator.avgMonthly *
+                (calculator.clickApproval / 100) *
+                (calculator.clickClose / 100)
+              : calculator.avgMonthly *
+                (calculator.currentApproval / 100) *
+                (calculator.currentClose / 100)
+            ) | number: "1.0-0"
+          }}
+        </span>
+      </div>
+      <div class="chart-info-data-text">
+        <span>Total monthly sales</span>
+        <span>{{
+          (clickLease
+            ? calculator.totalMonthlyClickSales
+            : calculator.totalMonthlySales
+          ) | number: "1.0-0"
+        }}</span>
+      </div>
+    </div>
+
+    <div class="chart-info-chart">
+      <apx-chart
+        [series]="[
+          calculator.avgMonthly,
+          clickLease
+            ? calculator.avgMonthly *
+              (calculator.clickApproval / 100) *
+              (calculator.clickClose / 100)
+            : calculator.avgMonthly *
+              (calculator.currentApproval / 100) *
+              (calculator.currentClose / 100)
+        ]"
+        [chart]="chartOptions.chart"
+        [labels]="chartOptions.labels"
+        [responsive]="chartOptions.responsive"
+        [colors]="chartOptions.colors"
+        [tooltip]="chartOptions.tooltip"
+      ></apx-chart>
+    </div>
+  </div>
+</section>
